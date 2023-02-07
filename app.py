@@ -21,7 +21,7 @@ subreddit = reddit.subreddit('aww')
 commentLimit= 10
 submissionLimit =6
 commentSort_mode = "best" # change this to the comment sorting method you want to use(e.g best, top, new, controversial, hot)
-sort_mode = "hot" # change this to the sorting method you want to use (e.g. hot, new, rising, top, etc.)
+sort_mode = "top" # change this to the sorting method you want to use (e.g. hot, new, rising, top, etc.)
 time_filter = "day" # change this to the time filter you want to use (e.g. hour, day, week, month, year, all)
 
 
@@ -59,7 +59,8 @@ elif sort_mode == "controversial":
 for submission in submissions:
     if submission.is_video or 'youtube.com' in submission.url or 'youtu.be' in submission.url:
         file_name = submission.title + ".txt"
-        file_path = os.path.join(SAVE_PATHs, file_name)
+        file_name = file_name.replace("[] ", "")
+        file_path = os.path.join(SAVE_PATHs, file_name).replace("\\", "/")
         
         
         submission.comments.replace_more(limit=None)
