@@ -7,8 +7,8 @@ import os
 
 user_agent = "Scraper myro"
 reddit = praw.Reddit(
-    client_id= 'HO2fzJOdcIPsVyfgJT6sAA',
-    client_secret = 'o167oBShCm5OnmjnBSrArdZGMXohMQ',
+    client_id= '',
+    client_secret = '',
     user_agent=user_agent
 )
 
